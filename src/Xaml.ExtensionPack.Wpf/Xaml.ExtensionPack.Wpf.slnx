@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Library/">
+    <!-- WPF プロジェクト本体 -->
+    <Project Path="Xaml.ExtensionPack.Wpf.csproj" />
+    <!-- 依存する Core プロジェクト (相対パスで参照) -->
+    <Project Path="../Xaml.ExtensionPack/Xaml.ExtensionPack.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="../../tests/Xaml.ExtensionPack.Wpf.Tests/Xaml.ExtensionPack.Wpf.Tests.csproj" />
+  </Folder>
+</Solution>

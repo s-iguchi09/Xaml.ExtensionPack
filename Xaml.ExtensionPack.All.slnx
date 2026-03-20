@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Xaml.ExtensionPack/Xaml.ExtensionPack.csproj" />
+    <Project Path="src/Xaml.ExtensionPack.Wpf/Xaml.ExtensionPack.Wpf.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Xaml.ExtensionPack.Tests/Xaml.ExtensionPack.Tests.csproj" />
+    <Project Path="tests/Xaml.ExtensionPack.Wpf.Tests/Xaml.ExtensionPack.Wpf.Tests.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/Xaml.ExtensionPack.Demo/Xaml.ExtensionPack.Demo.csproj" />
+  </Folder>
+</Solution>

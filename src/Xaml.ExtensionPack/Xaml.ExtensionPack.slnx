@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Xaml.ExtensionPack.csproj" />
+  <Folder Name="/Tests/">
+    <Project Path="../../tests/Xaml.ExtensionPack.Tests/Xaml.ExtensionPack.Tests.csproj" />
+  </Folder>
+</Solution>

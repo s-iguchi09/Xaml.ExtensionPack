@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- ターゲットフレームワークのマルチターゲット指定 -->
+    <TargetFrameworks>net10.0-windows;net8.0-windows;net472</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Modern C# Features -->
+    <LangVersion>latest</LangVersion>
+
+    <!-- NuGet Metadata -->
+    <PackageId>Xaml.ExtensionPack.Wpf</PackageId>
+    <Authors>s-iguchi</Authors>
+    <Description>A comprehensive XAML extension pack specifically for WPF, featuring essential attached behaviors and UI-focused properties.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/s-iguchi09/Xaml.ExtensionPack.Wpf</RepositoryUrl>
+
+    <!-- ドキュメントファイル生成を有効化 -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- 公開メンバのコメント欠落を警告にする場合 -->
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Core への参照（パスは環境に合わせて調整してください） -->
+    <ProjectReference Include="../../../Xaml.ExtensionPack/src/Xaml.ExtensionPack/Xaml.ExtensionPack.csproj" Condition="Exists('../../../Xaml.ExtensionPack/src/Xaml.ExtensionPack/Xaml.ExtensionPack.csproj')" />
+    <!-- ローカルにない（CI環境など）場合は、NuGetパッケージを参照する設定（公開後） -->
+    <PackageReference Include="Xaml.ExtensionPack" Version="1.0.0" Condition="!Exists('..\..\..\Xaml.ExtensionPack\src\Xaml.ExtensionPack\Xaml.ExtensionPack.csproj')" />
+  </ItemGroup>
+
+  <!--<ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <Reference Include="System.Xaml" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>-->
+</Project>

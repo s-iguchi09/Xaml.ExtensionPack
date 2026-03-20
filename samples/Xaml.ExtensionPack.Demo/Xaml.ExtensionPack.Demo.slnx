@@ -1,0 +1,14 @@
+<Solution>
+  <Project Path="Xaml.ExtensionPack.Demo.csproj" />
+
+  <Folder Name="/Library/">
+    <Project Path="../../src/Xaml.ExtensionPack/Xaml.ExtensionPack.csproj" />
+    <Project Path="../../src/Xaml.ExtensionPack.Wpf/Xaml.ExtensionPack.Wpf.csproj" />
+  </Folder>
+
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Configuration Name="Debug" />
+    <Configuration Name="Release" />
+  </Configurations>
+</Solution>
