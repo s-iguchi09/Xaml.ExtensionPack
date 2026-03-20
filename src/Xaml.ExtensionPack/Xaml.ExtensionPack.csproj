@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- ターゲットフレームワークのマルチターゲット指定 -->
+    <TargetFrameworks>net10.0;net8.0;net462</TargetFrameworks>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Modern C# Features -->
+    <LangVersion>latest</LangVersion>
+
+    <!-- NuGet Metadata -->
+    <PackageId>Xaml.ExtensionPack</PackageId>
+    <Authors>s-iguchi</Authors>
+    <Description>A lightweight, dependency-free core library providing foundational logic and property utilities for XAML-based frameworks.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/s-iguchi09/Xaml.ExtensionPack</RepositoryUrl>
+
+    <!-- ドキュメントファイル生成を有効化 -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- 公開メンバのコメント欠落を警告にする場合 -->
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

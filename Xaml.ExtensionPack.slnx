@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Xaml.ExtensionPack/Xaml.ExtensionPack.csproj" />
+  </Folder>
+</Solution>
