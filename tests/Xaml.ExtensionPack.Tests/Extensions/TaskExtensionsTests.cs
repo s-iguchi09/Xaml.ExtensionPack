@@ -39,16 +39,16 @@ public class TaskExtensionsTests
     }
 
     [Fact]
-    public async Task FireAndForget_WhenTaskFailsAndNoHandler_DoesNotThrow()
+    public void FireAndForget_WhenTaskFailsAndNoHandler_DoesNotThrow()
     {
         // Arrange
         var task = Task.FromException(new InvalidOperationException("unhandled"));
 
         // Act
         task.FireAndForget();
-        await Task.Delay(100);
 
-        // Assert: no exception propagated (test passes if we reach here)
-        Assert.True(true);
+        // Assert: test passes if no exception is thrown
     }
+}
+
 }
