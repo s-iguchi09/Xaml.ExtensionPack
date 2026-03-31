@@ -45,8 +45,8 @@ public class AsyncRelayCommandTests
     public async Task CanExecute_WhenIsExecuting_ReturnsFalse()
     {
         // Arrange
-        var executionStarted = new TaskCompletionSource<bool>();
-        var allowCompletion = new TaskCompletionSource<bool>();
+        var executionStarted = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+        var allowCompletion = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
         var command = new AsyncRelayCommand(async () =>
         {
             executionStarted.SetResult(true);
@@ -115,8 +115,8 @@ public class AsyncRelayCommandTests
     public async Task ExecuteAsync_DuringExecution_IsExecutingReturnsTrue()
     {
         // Arrange
-        var executionStarted = new TaskCompletionSource<bool>();
-        var allowCompletion = new TaskCompletionSource<bool>();
+        var executionStarted = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+        var allowCompletion = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
         bool isExecutingDuringExecution = false;
         var command = new AsyncRelayCommand(async () =>
         {
@@ -197,8 +197,8 @@ public class AsyncRelayCommandGenericTests
     public async Task CanExecute_WhenIsExecuting_ReturnsFalse()
     {
         // Arrange
-        var executionStarted = new TaskCompletionSource<bool>();
-        var allowCompletion = new TaskCompletionSource<bool>();
+        var executionStarted = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+        var allowCompletion = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
         var command = new AsyncRelayCommand<string>(async _ =>
         {
             executionStarted.SetResult(true);

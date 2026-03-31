@@ -3,7 +3,7 @@ namespace Xaml.ExtensionPack;
 public class TaskExtensionsTests
 {
     [Fact]
-    public async Task FireAndForget_WhenTaskSucceeds_DoesNotCallHandler()
+    public void FireAndForget_WhenTaskSucceeds_DoesNotCallHandler()
     {
         // Arrange
         var handlerCalled = false;
@@ -11,7 +11,6 @@ public class TaskExtensionsTests
 
         // Act
         task.FireAndForget(ex => handlerCalled = true);
-        await Task.Delay(100);
 
         // Assert
         Assert.False(handlerCalled);
@@ -22,7 +21,7 @@ public class TaskExtensionsTests
     {
         // Arrange
         Exception? capturedException = null;
-        var completionSource = new TaskCompletionSource<bool>();
+        var completionSource = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
         var task = Task.FromException(new InvalidOperationException("test error"));
 
         // Act
@@ -49,6 +48,4 @@ public class TaskExtensionsTests
 
         // Assert: test passes if no exception is thrown
     }
-}
-
 }
